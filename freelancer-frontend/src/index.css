@@ -1,0 +1,88 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.job-container,
+.applied-jobs-container {
+  padding: 20px;
+}
+
+.job-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.primary-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background-color: #0056b3;
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+form button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}

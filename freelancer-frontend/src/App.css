@@ -1,0 +1,89 @@
+.job-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.job-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.job-card h3 {
+  margin: 0 0 10px;
+}
+
+.job-card .description {
+  margin: 0 0 10px;
+}
+
+.job-card .budget {
+  margin: 0 0 10px;
+}
+
+.job-card .deadline {
+  margin: 0 0 20px;
+}
+
+.primary-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.primary-btn:hover {
+  background-color: #0056b3;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #007bff;
+  padding: 10px 20px;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.applied-jobs-container, .job-container {
+  padding: 20px;
+}
+
+.job-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.primary-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.primary-btn:hover {
+  background-color: #0056b3;
+}
