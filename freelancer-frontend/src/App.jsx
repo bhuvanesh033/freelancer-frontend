@@ -6,6 +6,7 @@ import Homelayout from './components/Homelayout';
 import Job from './components/Jobs';
 import AppliedJobs from './components/AppliedJobs';
 import BidForm from './components/BidForm';
+import PostJob from './components/PostJob';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/" element={<Job />} />
             <Route path="/applied-jobs" element={<AppliedJobs />} />
             <Route path="/bid/:jobId" element={<BidForm />} />
+            <Route path="/post-job" element={<PostJob />} />
           </Route>
         </Routes>
       </BrowserRouter>

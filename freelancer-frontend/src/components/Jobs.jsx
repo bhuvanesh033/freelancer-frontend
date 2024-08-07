@@ -1,15 +1,21 @@
 import React from 'react';
-import { JOBS } from "../constant";
+import { useSelector } from 'react-redux';
 import JobCard from './JobsCard';
 
 const Job = () => {
-    return (
-        <div className="job-container">
-            {JOBS.map((job) => {
-                return <JobCard key={job.id} job={job} />;
-            })}
-        </div>
-    );
+  const jobs = useSelector((state) => state.jobs.jobs);
+
+  return (
+    <div className="job-container">
+      {jobs.length > 0 ? (
+        jobs.map((job) => (
+          <JobCard key={job.id} job={job} />
+        ))
+      ) : (
+        <p>No jobs available</p>
+      )}
+    </div>
+  );
 };
 
 export default Job;
