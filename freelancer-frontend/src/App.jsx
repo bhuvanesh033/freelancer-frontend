@@ -8,6 +8,7 @@ import AppliedJobs from './components/AppliedJobs';
 import BidForm from './components/BidForm';
 import PostJob from './components/PostJob';
 
+
 const App = () => {
   return (
     <Provider store={store}>
