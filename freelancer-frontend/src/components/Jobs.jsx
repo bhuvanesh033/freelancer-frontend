@@ -4,11 +4,14 @@ import JobCard from './JobsCard';
 
 const Job = () => {
   const jobs = useSelector((state) => state.jobs.jobs);
+  const user = useSelector((state) => state.auth.user);
+
+  const filteredJobs = user.role === 'client' ? jobs.filter(job => job.clientId === user.id) : jobs;
 
   return (
     <div className="job-container">
-      {jobs.length > 0 ? (
-        jobs.map((job) => (
+      {filteredJobs.length > 0 ? (
+        filteredJobs.map((job) => (
           <JobCard key={job.id} job={job} />
         ))
       ) : (

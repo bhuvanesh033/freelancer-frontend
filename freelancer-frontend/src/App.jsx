@@ -7,18 +7,22 @@ import Job from './components/Jobs';
 import AppliedJobs from './components/AppliedJobs';
 import BidForm from './components/BidForm';
 import PostJob from './components/PostJob';
-
+import Login from './components/Login';
+import Signup from './components/Signup';
+import AuthWrapper from './components/AuthWrapper';
 
 const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Homelayout />}>
-            <Route path="/" element={<Job />} />
-            <Route path="/applied-jobs" element={<AppliedJobs />} />
-            <Route path="/bid/:jobId" element={<BidForm />} />
-            <Route path="/post-job" element={<PostJob />} />
+            <Route path="/" element={<AuthWrapper><Job /></AuthWrapper>} />
+            <Route path="/applied-jobs" element={<AuthWrapper role="freelancer"><AppliedJobs /></AuthWrapper>} />
+            <Route path="/bid/:jobId" element={<AuthWrapper role="freelancer"><BidForm /></AuthWrapper>} />
+            <Route path="/post-job" element={<AuthWrapper role="client"><PostJob /></AuthWrapper>} />
           </Route>
         </Routes>
       </BrowserRouter>
