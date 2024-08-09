@@ -1,4 +1,3 @@
-// src/axiosConfig.js
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://free-lancer-1.onrender.com/api';
@@ -12,3 +11,6 @@ axios.interceptors.request.use(config => {
 }, error => {
   return Promise.reject(error);
 });
+
+// Export axios as the default export
+export default axios;

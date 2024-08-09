@@ -10,6 +10,9 @@ import PostJob from './components/PostJob';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import AuthWrapper from './components/AuthWrapper';
+import CreateJob from './components/CreateJob';
+import MyJobs from './components/MyJobs';
+import ViewBids from './components/ViewBids';
 
 const App = () => {
   return (
@@ -19,9 +22,14 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Homelayout />}>
+            <Route path="/create-job" element={<CreateJob />} />
+            <Route path="/my-jobs" element={<MyJobs />} />
+            <Route path="/my-bids" element={<ViewBids />} />
             <Route path="/" element={<AuthWrapper><Job /></AuthWrapper>} />
-            <Route path="/applied-jobs" element={<AuthWrapper role="freelancer"><AppliedJobs /></AuthWrapper>} />
-            <Route path="/bid/:jobId" element={<AuthWrapper role="freelancer"><BidForm /></AuthWrapper>} />
+            {/* <Route path="/applied-jobs" element={<AuthWrapper role="freelancer"><AppliedJobs /></AuthWrapper>} /> */}
+            <Route path="/applied-jobs" element={<AppliedJobs />} />
+           <Route path="/jobs/:jobId/bid" element={<BidForm />} />
+
             <Route path="/post-job" element={<AuthWrapper role="client"><PostJob /></AuthWrapper>} />
           </Route>
         </Routes>

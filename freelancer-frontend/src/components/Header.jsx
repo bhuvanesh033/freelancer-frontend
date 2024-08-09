@@ -16,11 +16,14 @@ const Header = () => {
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>
-          {user && user.role === 'freelancer' && (
+          {user && user.userType === 'freelancer' && (
             <li><Link to="/applied-jobs">Applied Jobs</Link></li>
           )}
-          {user && user.role === 'client' && (
-            <li><Link to="/post-job">Post Job</Link></li>
+          {user && user.userType === 'client' && (<>
+              <li><Link to="/create-job">Create Job</Link></li>
+              <li><Link to="/my-bids">View Bids</Link></li>
+              <li><Link to="/my-jobs">My Jobs</Link></li>
+            </>
           )}
           {user ? (
             <>

@@ -1,24 +1,40 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import JobCard from './JobsCard';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from '../axiosConfig';
 
-const Job = () => {
-  const jobs = useSelector((state) => state.jobs.jobs);
-  const user = useSelector((state) => state.auth.user);
+const Jobs = () => {
+  const [jobs, setJobs] = useState([]);
+  const navigate = useNavigate();
 
-  const filteredJobs = user.role === 'client' ? jobs.filter(job => job.clientId === user.id) : jobs;
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await axios.get('/jobs');
+        setJobs(response.data);
+      } catch (error) {
+        console.error('Error fetching jobs:', error);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
+  const handleBidClick = (jobId) => {
+    navigate(`/jobs/${jobId}/bid`);
+  };
 
   return (
-    <div className="job-container">
-      {filteredJobs.length > 0 ? (
-        filteredJobs.map((job) => (
-          <JobCard key={job.id} job={job} />
-        ))
-      ) : (
-        <p>No jobs available</p>
-      )}
+    <div>
+      {jobs.map((job) => (
+        <div key={job._id}>
+          <h2>{job.title}</h2>
+          <p>{job.description}</p>
+          <p>Budget: {job.budget}</p>
+          <button onClick={() => handleBidClick(job._id)}>Bid on this job</button>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default Job;
+export default Jobs;
