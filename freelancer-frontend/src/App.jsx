@@ -13,6 +13,8 @@ import AuthWrapper from './components/AuthWrapper';
 import CreateJob from './components/CreateJob';
 import MyJobs from './components/MyJobs';
 import ViewBids from './components/ViewBids';
+import SendMessage from './components/SendMessage'; // Adjust the path as needed
+
 
 const App = () => {
   return (
@@ -28,7 +30,9 @@ const App = () => {
             <Route path="/" element={<AuthWrapper><Job /></AuthWrapper>} />
             {/* <Route path="/applied-jobs" element={<AuthWrapper role="freelancer"><AppliedJobs /></AuthWrapper>} /> */}
             <Route path="/applied-jobs" element={<AppliedJobs />} />
-           <Route path="/jobs/:jobId/bid" element={<BidForm />} />
+            <Route path="/jobs/:jobId/bid" element={<BidForm />} />
+            <Route path="/send-message/:jobId" element={<SendMessage />} />
+
 
             <Route path="/post-job" element={<AuthWrapper role="client"><PostJob /></AuthWrapper>} />
           </Route>

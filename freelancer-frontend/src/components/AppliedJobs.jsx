@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const AppliedJobs = () => {
@@ -7,8 +7,8 @@ const AppliedJobs = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Retrieve token from local storage or any other auth mechanism
   const token = localStorage.getItem('token');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchBids = async () => {
@@ -18,8 +18,7 @@ const AppliedJobs = () => {
             'Authorization': `Bearer ${token}`,
           },
         });
-        console.log(response.data); // Log the response data
-        setBids(response.data.bids); // Access the bids array from the response
+        setBids(response.data.bids);
       } catch (error) {
         setError('Failed to fetch bids');
       } finally {
@@ -29,13 +28,8 @@ const AppliedJobs = () => {
 
     fetchBids();
   }, [token]);
-
-  // Access applied jobs from Redux store
-  const appliedJobs = useSelector((state) => state.jobs.appliedJobs);
-
-  const handleMessageClick = (freelancerId) => {
-    console.log(`Message button clicked for freelancer ID: ${freelancerId}`);
-    // Implement messaging functionality here
+  const handleMessageClick = (receiverId, jobId) => {
+    navigate(`/send-message/${jobId}`, { state: { receiverId } });
   };
 
   return (
@@ -54,7 +48,7 @@ const AppliedJobs = () => {
             <p>Amount: $ {bid.amount}</p>
             <p>Proposal: {bid.proposal}</p>
             <p>Freelancer ID: {bid.freelancerId}</p>
-            <button onClick={() => handleMessageClick(bid.freelancerId)}>Message</button>
+            <button onClick={() => handleMessageClick(bid.freelancerId, bid.jobId._id)}>Message</button>
           </div>
         ))
       )}
