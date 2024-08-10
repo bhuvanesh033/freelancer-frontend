@@ -14,6 +14,8 @@ import CreateJob from './components/CreateJob';
 import MyJobs from './components/MyJobs';
 import ViewBids from './components/ViewBids';
 import SendMessage from './components/SendMessage'; // Adjust the path as needed
+import BidsList from './components/BidsList';
+import AcceptedBids from './components/AcceptedBids';  
 
 
 const App = () => {
@@ -32,6 +34,8 @@ const App = () => {
             <Route path="/applied-jobs" element={<AppliedJobs />} />
             <Route path="/jobs/:jobId/bid" element={<BidForm />} />
             <Route path="/send-message/:jobId" element={<SendMessage />} />
+            <Route path="/bids/:jobId" element={<BidsList />} />
+            <Route path="/accepted-bids" element={<AcceptedBids />} />
 
 
             <Route path="/post-job" element={<AuthWrapper role="client"><PostJob /></AuthWrapper>} />
@@ -41,5 +45,6 @@ const App = () => {
     </Provider>
   );
 };
+
 
 export default App;

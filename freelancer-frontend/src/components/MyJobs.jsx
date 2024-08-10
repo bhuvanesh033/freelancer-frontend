@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const MyJobs = () => {
   const [jobs, setJobs] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -20,6 +22,10 @@ const MyJobs = () => {
     fetchJobs();
   }, []);
 
+  const handleViewBids = (jobId) => {
+    navigate(`/bids/${jobId}`);
+  };
+
   return (
     <div>
       <h2>My Posted Jobs</h2>
@@ -30,6 +36,7 @@ const MyJobs = () => {
             <p>Description: {job.description}</p>
             <p>Budget: {job.budget}</p>
             <p>Deadline: {job.deadline}</p>
+            <button onClick={() => handleViewBids(job._id)}>View Bids</button>
           </div>
         ))
       ) : (

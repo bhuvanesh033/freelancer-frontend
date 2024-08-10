@@ -23,6 +23,7 @@ const Header = () => {
               <li><Link to="/create-job">Create Job</Link></li>
               <li><Link to="/my-bids">View Bids</Link></li>
               <li><Link to="/my-jobs">My Jobs</Link></li>
+              <li><Link to="/accepted-bids">My Jobs</Link></li>
             </>
           )}
           {user ? (
