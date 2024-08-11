@@ -1,0 +1,56 @@
+/* Container for the BidsList component */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #f4f4f4; /* Light gray background for the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Heading styling */
+  h2 {
+    font-size: 2rem;
+    color: #333; /* Dark text color */
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for each bid card */
+  .bid-card {
+    background: #ffffff; /* White background for each bid card */
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px;
+    margin-bottom: 15px; /* Space between cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Bid card title styling */
+  .bid-card p {
+    margin: 5px 0;
+    color: #555; /* Medium gray text */
+  }
+  
+  /* Button styling */
+  button {
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Error message styling */
+  .error {
+    color: red;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  

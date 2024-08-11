@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import styles from './Signup.module.css';
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -26,46 +27,55 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label>
+    <div className={styles.signupContainer}>
+      <h2 className={styles.signupTitle}>Signup</h2>
+      <form onSubmit={handleSubmit} className={styles.signupForm}>
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Name:</label>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label>Email:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Email:</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label>Password:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Password:</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label>User Type:</label>
-          <select value={userType} onChange={(e) => setUserType(e.target.value)}>
+        <div className={styles.formGroup}>
+          <label className={styles.label}>User Type:</label>
+          <select
+            value={userType}
+            onChange={(e) => setUserType(e.target.value)}
+            className={styles.select}
+          >
             <option value="freelancer">Freelancer</option>
             <option value="client">Client</option>
           </select>
         </div>
-        <button type="submit">Signup</button>
+        <button type="submit" className={styles.signupButton}>Signup</button>
       </form>
-      <p>Already have an account? <Link to="/login">Login here</Link>.</p>
+      <p className={styles.loginPrompt}>
+        Already have an account? <Link to="/login" className={styles.loginLink}>Login here</Link>.
+      </p>
     </div>
   );
 };

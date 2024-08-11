@@ -1,0 +1,69 @@
+/* Container for the applied jobs section */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9; /* Light background */
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for container */
+  }
+  
+  /* Heading styling */
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333; /* Darker text color */
+    text-align: center; /* Centered text */
+  }
+  
+  /* Individual job card styling */
+  .job-card {
+    background: #ffffff; /* White background for job cards */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners for job cards */
+    padding: 20px;
+    margin-bottom: 20px; /* Space between job cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for job card */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+  }
+  
+  /* Job card hover effect */
+  .job-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+  }
+  
+  /* Job title styling */
+  .job-card h3 {
+    font-size: 1.5rem;
+    color: #007bff; /* Blue color for the title */
+    margin-bottom: 15px;
+  }
+  
+  /* Other text styling */
+  .job-card p {
+    margin: 8px 0;
+    color: #555; /* Medium gray text color */
+  }
+  
+  /* Button styling */
+  button {
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded button corners */
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Loading and error messages */
+  p {
+    font-size: 1.1rem;
+    color: #666; /* Gray color for text */
+  }
+  

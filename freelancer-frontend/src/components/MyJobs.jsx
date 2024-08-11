@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import styles from './MyJobs.module.css'; // Import the CSS module
 
 const MyJobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -27,16 +28,16 @@ const MyJobs = () => {
   };
 
   return (
-    <div>
-      <h2>My Posted Jobs</h2>
+    <div className={styles.container}>
+      <h2 className={styles.heading}>My Posted Jobs</h2>
       {jobs.length > 0 ? (
         jobs.map((job) => (
-          <div key={job._id}>
-            <h3>{job.title}</h3>
-            <p>Description: {job.description}</p>
-            <p>Budget: {job.budget}</p>
-            <p>Deadline: {job.deadline}</p>
-            <button onClick={() => handleViewBids(job._id)}>View Bids</button>
+          <div key={job._id} className={styles.jobCard}>
+            <h3 className={styles.jobTitle}>{job.title}</h3>
+            <p className={styles.jobDetail}>Description: {job.description}</p>
+            <p className={styles.jobDetail}>Budget: ${job.budget}</p>
+            <p className={styles.jobDetail}>Deadline: {new Date(job.deadline).toLocaleDateString()}</p>
+            <button className={styles.button} onClick={() => handleViewBids(job._id)}>View Bids</button>
           </div>
         ))
       ) : (

@@ -1,0 +1,59 @@
+/* Container styling for the Messages component */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Heading styling */
+  h2 {
+    font-size: 2rem;
+    color: #333; /* Dark text color */
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for each message card */
+  .message-card {
+    background: #ffffff; /* White background for each message card */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    margin-bottom: 20px; /* Space between cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+  }
+  
+  .message-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  }
+  
+  /* Message card title styling */
+  .message-card h3 {
+    margin: 0 0 10px;
+    color: #007bff; /* Blue color for sender name */
+  }
+  
+  /* Message card text styling */
+  .message-card p {
+    margin: 5px 0;
+    color: #555; /* Medium gray text */
+    font-size: 1rem;
+  }
+  
+  /* Date styling */
+  .message-card .date {
+    font-size: 0.875rem;
+    color: #888; /* Light gray color for date */
+  }
+  
+  /* Error message styling */
+  .error {
+    color: red;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  

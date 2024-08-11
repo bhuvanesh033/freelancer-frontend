@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styles from './AcceptedBids.module.css'; // Import the CSS module
 
 const AcceptedBids = () => {
   const [acceptedBids, setAcceptedBids] = useState([]);
@@ -77,24 +78,24 @@ const AcceptedBids = () => {
   };
 
   return (
-    <div>
-      <h2>Accepted Bids</h2>
+    <div className={styles.container}>
+      <h2 className={styles.heading}>Accepted Bids</h2>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
         <p>{error}</p>
       ) : acceptedBids.length > 0 ? (
         acceptedBids.map((bid) => (
-          <div key={bid._id}>
-            <h3>Job Description: {bid.jobId.description}</h3>
-            <p>Freelancer: {bid.freelancerId.name}</p>
-            <p>Amount: ${bid.amount}</p>
-            <p>Date: {new Date(bid.date).toLocaleDateString()}</p>
-            <button onClick={() => setSelectedBid(bid)}>Post Review</button>
-            <button onClick={() => setSelectedBid(bid)}>Send Payment</button>
+          <div key={bid._id} className={styles.jobCard}>
+            <h3 className={styles.jobTitle}>Job Description: {bid.jobId.description}</h3>
+            <p className={styles.jobDescription}>Freelancer: {bid.freelancerId.name}</p>
+            <p className={styles.jobDetails}>Amount: ${bid.amount}</p>
+            <p className={styles.jobDetails}>Date: {new Date(bid.date).toLocaleDateString()}</p>
+            <button className={styles.button} onClick={() => setSelectedBid(bid)}>Post Review</button>
+            <button className={styles.button} onClick={() => setSelectedBid(bid)}>Send Payment</button>
 
             {selectedBid && (
-              <div>
+              <div className={styles.reviewPaymentSection}>
                 <h3>Post a Review</h3>
                 <input
                   type="number"
@@ -112,7 +113,7 @@ const AcceptedBids = () => {
                   value={review.review}
                   onChange={handleReviewChange}
                 />
-                <button onClick={() => handleSubmitReview(selectedBid.jobId._id, selectedBid.freelancerId._id)}>
+                <button className={styles.button} onClick={() => handleSubmitReview(selectedBid.jobId._id, selectedBid.freelancerId._id)}>
                   Submit Review
                 </button>
 
@@ -124,12 +125,12 @@ const AcceptedBids = () => {
                   value={payment.amount}
                   onChange={handlePaymentChange}
                 />
-                <button onClick={() => handleSubmitPayment(selectedBid.jobId._id, selectedBid.freelancerId._id)}>
+                <button className={styles.button} onClick={() => handleSubmitPayment(selectedBid.jobId._id, selectedBid.freelancerId._id)}>
                   Send Payment
                 </button>
 
                 {paymentStatus && (
-                  <div>
+                  <div className={styles.paymentStatus}>
                     <h4>Payment Status</h4>
                     <p>Amount: ${paymentStatus.amount}</p>
                     <p>Date: {new Date(paymentStatus.date).toLocaleDateString()}</p>

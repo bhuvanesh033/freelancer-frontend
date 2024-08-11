@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styles from './Messages.module.css'; // Import the CSS module
 
 const Messages = () => {
   const [messages, setMessages] = useState([]);
@@ -17,24 +18,24 @@ const Messages = () => {
         setLoading(false);
       }
     };
-  
+
     fetchMessages();
   }, []);
-  
+
   return (
-    <div>
+    <div className={styles.container}>
       <h2>Messages</h2>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
-        <p>{error}</p>
+        <p className={styles.error}>{error}</p>
       ) : messages.length > 0 ? (
         messages.map((message) => (
-          <div key={message._id}>
+          <div key={message._id} className={styles['message-card']}>
             <h3>From: {message.senderId.name}</h3>
             <p>Message: {message.message}</p>
             <p>Job Description: {message.jobId ? message.jobId.description : 'No job details'}</p>
-            <p>Date: {new Date(message.createdAt).toLocaleDateString()}</p>
+            <p className={styles.date}>Date: {new Date(message.createdAt).toLocaleDateString()}</p>
           </div>
         ))
       ) : (

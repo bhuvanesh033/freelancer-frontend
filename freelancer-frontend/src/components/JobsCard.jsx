@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import styles from './JobCard.module.css'; // Import CSS Module
 
 const JobCard = ({ job }) => {
   const appliedJobs = useSelector((state) => state.jobs.appliedJobs);
@@ -13,17 +14,17 @@ const JobCard = ({ job }) => {
   };
 
   return (
-    <div className="job-card">
-      <h3>{job.title}</h3>
-      <p className="description">{job.description}</p>
-      <p className="budget">$ {job.budget}</p>
-      <p className="deadline">Deadline: {new Date(job.deadline).toLocaleDateString()}</p>
+    <div className={styles.jobCard}>
+      <h3 className={styles.jobTitle}>{job.title}</h3>
+      <p className={styles.description}>{job.description}</p>
+      <p className={styles.budget}>$ {job.budget}</p>
+      <p className={styles.deadline}>Deadline: {new Date(job.deadline).toLocaleDateString()}</p>
       {user.role === 'client' ? (
-        <button disabled>Clients cannot bid</button>
+        <button className={styles.disabledButton} disabled>Clients cannot bid</button>
       ) : isApplied ? (
-        <button onClick={() => navigate('/applied-jobs')}>View Application</button>
+        <button className={styles.viewButton} onClick={() => navigate('/applied-jobs')}>View Application</button>
       ) : (
-        <button onClick={handleBid}>Bid</button>
+        <button className={styles.bidButton} onClick={handleBid}>Bid</button>
       )}
     </div>
   );

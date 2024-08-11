@@ -1,0 +1,55 @@
+/* Container for the list of jobs */
+.jobsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Card styling for each job */
+  .jobCard {
+    background-color: #ffffff; /* White background for the job card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+  }
+  
+  /* Styling for job title */
+  .jobTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333; /* Darker text color */
+  }
+  
+  /* Styling for job description */
+  .jobDescription {
+    font-size: 1rem;
+    color: #555; /* Slightly lighter text color */
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for job budget */
+  .jobBudget {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff; /* Primary color for budget */
+    margin-bottom: 15px;
+  }
+  
+  /* Styling for the bid button */
+  .bidButton {
+    background-color: #007bff; /* Primary color */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .bidButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  

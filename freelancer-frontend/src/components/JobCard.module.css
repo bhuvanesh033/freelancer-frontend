@@ -1,0 +1,88 @@
+/* Styling for the job card container */
+.jobCard {
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+  }
+  
+  /* Hover effect for job card */
+  .jobCard:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  }
+  
+  /* Styling for job title */
+  .jobTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333; /* Darker text color */
+  }
+  
+  /* Styling for job description */
+  .description {
+    font-size: 1rem;
+    color: #555; /* Slightly lighter text color */
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for job budget */
+  .budget {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff; /* Primary color */
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for job deadline */
+  .deadline {
+    font-size: 0.9rem;
+    color: #888; /* Lighter text color */
+    margin-bottom: 15px;
+  }
+  
+  /* Styling for buttons */
+  .bidButton {
+    background-color: #28a745; /* Green for bidding */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .bidButton:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  /* Styling for view application button */
+  .viewButton {
+    background-color: #007bff; /* Primary color */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .viewButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  /* Styling for disabled button */
+  .disabledButton {
+    background-color: #cccccc; /* Light grey for disabled state */
+    color: #666666; /* Darker grey text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: not-allowed; /* Cursor indicating button is not clickable */
+    font-size: 1rem;
+  }
+  

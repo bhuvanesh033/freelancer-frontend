@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { login } from '../redux/authSlice';
+import styles from './Login.module.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -28,15 +29,12 @@ const Login = () => {
       console.log('Token:', token);
       localStorage.setItem('token', token);
       
-      // Set the token in Axios headers for future requests
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
-      // Dispatch login action with user details (if needed)
-      // Ensure your backend provides necessary user details
       const user = { email, userType };
       dispatch(login(user));
 
-      navigate('/'); // Redirect to homepage after successful login
+      navigate('/'); 
     } catch (err) {
       console.error('Login failed', err.response?.data?.msg || err.message);
       setError(err.response?.data?.msg || 'Login failed');
@@ -46,9 +44,9 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2>Login</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p className={styles.error}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Email:</label>

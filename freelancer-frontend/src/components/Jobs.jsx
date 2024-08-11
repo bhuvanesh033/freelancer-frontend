@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../axiosConfig';
+import styles from './Jobs.module.css';
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -24,15 +25,21 @@ const Jobs = () => {
   };
 
   return (
-    <div>
-      {jobs.map((job) => (
-        <div key={job._id}>
-          <h2>{job.title}</h2>
-          <p>{job.description}</p>
-          <p>Budget: {job.budget}</p>
-          <button onClick={() => handleBidClick(job._id)}>Bid on this job</button>
-        </div>
-      ))}
+    <div className={styles.jobsContainer}>
+      {jobs.length > 0 ? (
+        jobs.map((job) => (
+          <div key={job._id} className={styles.jobCard}>
+            <h2 className={styles.jobTitle}>{job.title}</h2>
+            <p className={styles.jobDescription}>{job.description}</p>
+            <p className={styles.jobBudget}>Budget: ${job.budget}</p>
+            <button className={styles.bidButton} onClick={() => handleBidClick(job._id)}>
+              Bid on this job
+            </button>
+          </div>
+        ))
+      ) : (
+        <p>No jobs available at the moment.</p>
+      )}
     </div>
   );
 };
