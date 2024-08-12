@@ -18,22 +18,22 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     setError('');
-
+  
     try {
-      const response = await axios.post('https://free-lancer-1.onrender.com/api/auth/login', {
+      const response = await axios.post('http://localhost:5000/api/auth/login', {
         email,
         password,
       });
-
-      const { token } = response.data;
+  
+      const { token, user } = response.data; // Ensure `user` object includes `id`
       console.log('Token:', token);
+      console.log('User:', user); // Add this for debugging
       localStorage.setItem('token', token);
-      
+  
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-
-      const user = { email, userType };
-      dispatch(login(user));
-
+  
+      dispatch(login(user)); // Store user including id in Redux
+  
       navigate('/'); 
     } catch (err) {
       console.error('Login failed', err.response?.data?.msg || err.message);
@@ -42,6 +42,8 @@ const Login = () => {
       setLoading(false);
     }
   };
+  
+  
 
   return (
     <div className={styles.container}>

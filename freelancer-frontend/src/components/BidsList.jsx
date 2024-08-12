@@ -51,7 +51,14 @@ const BidsList = () => {
         date: new Date().toISOString()
       });
 
-      alert('Bid accepted and message sent!');
+      // Create or retrieve a conversation
+      await axios.post('http://localhost:5000/api/conversation', {
+        jobId: jobId,
+        freelancerId: bid.freelancerId._id,
+        clientId: job.clientId._id
+      });
+
+      alert('Bid accepted, message sent, and conversation created!');
     } catch (err) {
       console.error('Failed to accept bid', err);
     }

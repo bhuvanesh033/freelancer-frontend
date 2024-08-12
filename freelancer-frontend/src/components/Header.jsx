@@ -21,6 +21,7 @@ const Header = () => {
               <li><Link className={styles.navLink} to="/">Home</Link></li>
               <li><Link className={styles.navLink} to="/applied-jobs">Applied Jobs</Link></li>
               <li><Link className={styles.navLink} to="/messages">Messages</Link></li>
+              <li><Link className={styles.navLink} to="/conversations">Conversations</Link></li>
             </>
           )}
           {user && user.userType === 'client' && (
@@ -28,6 +29,7 @@ const Header = () => {
               <li><Link className={styles.navLink} to="/create-job">Create Job</Link></li>
               <li><Link className={styles.navLink} to="/my-jobs">My Jobs</Link></li>
               <li><Link className={styles.navLink} to="/accepted-bids">Ongoing Jobs</Link></li>
+              <li><Link className={styles.navLink} to="/conversations">Conversations</Link></li>
             </>
           )}
           {user ? (

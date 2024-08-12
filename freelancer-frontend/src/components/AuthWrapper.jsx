@@ -13,7 +13,7 @@ const AuthWrapper = ({ children, role }) => {
     return <Navigate to="/login" />;
   }
 
-  if (role && user.role !== role) {
+  if (role && user.userType !== role) { // Adjusted property to userType
     console.log('User role does not match, redirecting to home.');
     return <Navigate to="/" />;
   }

@@ -9,7 +9,6 @@ import BidForm from './components/BidForm';
 import PostJob from './components/PostJob';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import AuthWrapper from './components/AuthWrapper';
 import CreateJob from './components/CreateJob';
 import MyJobs from './components/MyJobs';
 import ViewBids from './components/ViewBids';
@@ -17,8 +16,8 @@ import SendMessage from './components/SendMessage'; // Adjust the path as needed
 import BidsList from './components/BidsList';
 import AcceptedBids from './components/AcceptedBids';  
 import Messages from './components/Messages';
+import Conversations from './components/Conversations';
 import './index.css'; // or wherever Tailwind CSS is imported
-
 
 const App = () => {
   return (
@@ -31,23 +30,20 @@ const App = () => {
             <Route path="/create-job" element={<CreateJob />} />
             <Route path="/my-jobs" element={<MyJobs />} />
             <Route path="/my-bids" element={<ViewBids />} />
-            <Route path="/" element={<AuthWrapper><Job /></AuthWrapper>} />
-            {/* <Route path="/applied-jobs" element={<AuthWrapper role="freelancer"><AppliedJobs /></AuthWrapper>} /> */}
+            <Route path="/" element={<Job />} />
             <Route path="/applied-jobs" element={<AppliedJobs />} />
             <Route path="/jobs/:jobId/bid" element={<BidForm />} />
             <Route path="/send-message/:jobId" element={<SendMessage />} />
             <Route path="/bids/:jobId" element={<BidsList />} />
             <Route path="/accepted-bids" element={<AcceptedBids />} />
             <Route path="/messages" element={<Messages />} />
-
-
-            <Route path="/post-job" element={<AuthWrapper role="client"><PostJob /></AuthWrapper>} />
+            <Route path="/conversations" element={<Conversations />} />
+            <Route path="/post-job" element={<PostJob />} />
           </Route>
         </Routes>
       </BrowserRouter>
     </Provider>
   );
 };
-
 
 export default App;
