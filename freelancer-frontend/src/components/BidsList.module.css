@@ -1,56 +1,103 @@
 /* Container for the BidsList component */
 .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background: #f4f4f4; /* Light gray background for the container */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-  
-  /* Heading styling */
-  h2 {
-    font-size: 2rem;
-    color: #333; /* Dark text color */
-    margin-bottom: 20px;
-  }
-  
-  /* Styling for each bid card */
-  .bid-card {
-    background: #ffffff; /* White background for each bid card */
-    border: 1px solid #ddd;
-    border-radius: 10px; /* Rounded corners */
-    padding: 15px;
-    margin-bottom: 15px; /* Space between cards */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-  
-  /* Bid card title styling */
-  .bid-card p {
-    margin: 5px 0;
-    color: #555; /* Medium gray text */
-  }
-  
-  /* Button styling */
-  button {
-    background-color: #007bff; /* Blue background */
-    color: white;
-    border: none;
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease; /* Smooth color transition */
-  }
-  
-  button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
-  /* Error message styling */
-  .error {
-    color: red;
-    font-size: 1rem;
-    margin-top: 10px;
-  }
-  
+  max-width: 900px; /* Slightly increased width */
+  margin: auto;
+  padding: 25px; /* Increased padding for more space inside */
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); /* Gradient with more vibrant colors */
+  border-radius: 20px; /* More pronounced rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for more depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Added background transition */
+}
+
+.container:hover {
+  transform: scale(1.05); /* Slightly more scale on hover */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25); /* More pronounced shadow on hover */
+  background: linear-gradient(135deg, #8ec5fc 0%, #e0c3fc 100%); /* Reverse gradient on hover for a dynamic effect */
+}
+
+/* Heading styling */
+h2 {
+  font-size: 2.8rem; /* Larger font size */
+  color: #2c3e50; /* Darker blue-gray color for the heading */
+  text-align: center;
+  margin-bottom: 25px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15); /* Stronger text shadow */
+  font-family: 'Poppins', sans-serif; /* Added a stylish font */
+  letter-spacing: 1.5px; /* Added letter spacing for a more spaced-out look */
+}
+
+/* Styling for each bid card */
+.bid-card {
+  background: #ffffff;
+  border: none;
+  border-radius: 20px; /* Increased border-radius */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12); /* Stronger shadow for cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+}
+
+.bid-card:hover {
+  transform: translateY(-10px); /* Increased lift effect */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2); /* More dramatic shadow on hover */
+  background-color: #f0f8ff; /* Light blue background on hover */
+}
+
+/* Bid card text styling */
+.bid-card p {
+  margin: 10px 0; /* Increased margin for better spacing */
+  color: #34495e; /* Darker gray-blue text */
+  font-size: 1.2rem; /* Slightly larger font size */
+  line-height: 1.6; /* Improved line height */
+  font-family: 'Roboto', sans-serif; /* Added a modern font */
+}
+
+/* Button styling */
+button {
+  background-color: #ff6b6b; 
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 24px; /* Larger padding for a bigger button */
+  cursor: pointer;
+  font-size: 1.3rem; /* Larger font size */
+  font-weight: 700; /* Bolder text */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger button shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+  position: relative; /* Position relative for pseudo-elements */
+  overflow: hidden; /* Hide overflow for animation */
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.3); /* Light overlay */
+  transition: all 0.6s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+}
+
+button:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+}
+
+button:hover {
+  background-color: #e63946;
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Error message styling */
+.error {
+  color: #e63946;
+  font-size: 1.2rem; /* Larger font size */
+  margin-top: 20px; /* More space above the error message */
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif; /* Added font for consistency */
+  text-transform: uppercase; /* Uppercase for emphasis */
+}

@@ -50,7 +50,7 @@ const AppliedJobs = () => {
             <p>Amount: $ {bid.amount}</p>
             <p>Proposal: {bid.proposal}</p>
             <p>Freelancer ID: {bid.freelancerId}</p>
-            <button onClick={() => handleMessageClick(bid.freelancerId, bid.jobId._id)}>Message</button>
+            {/* <button onClick={() => handleMessageClick(bid.freelancerId, bid.jobId._id)}>Message</button> */}
           </div>
         ))
       )}

@@ -17,6 +17,7 @@ import SendMessage from './components/SendMessage'; // Adjust the path as needed
 import BidsList from './components/BidsList';
 import AcceptedBids from './components/AcceptedBids';  
 import Messages from './components/Messages';
+import './index.css'; // or wherever Tailwind CSS is imported
 
 
 const App = () => {

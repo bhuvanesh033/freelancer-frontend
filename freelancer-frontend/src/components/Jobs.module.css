@@ -1,55 +1,96 @@
 /* Container for the list of jobs */
 .jobsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  /* Card styling for each job */
-  .jobCard {
-    background-color: #ffffff; /* White background for the job card */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px;
-    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
-  }
-  
-  /* Styling for job title */
-  .jobTitle {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333; /* Darker text color */
-  }
-  
-  /* Styling for job description */
-  .jobDescription {
-    font-size: 1rem;
-    color: #555; /* Slightly lighter text color */
-    margin-bottom: 10px;
-  }
-  
-  /* Styling for job budget */
-  .jobBudget {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #007bff; /* Primary color for budget */
-    margin-bottom: 15px;
-  }
-  
-  /* Styling for the bid button */
-  .bidButton {
-    background-color: #007bff; /* Primary color */
-    color: #ffffff; /* White text */
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease; /* Smooth color transition */
-  }
-  
-  .bidButton:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Increased gap for better spacing between cards */
+  padding: 25px; /* Increased padding for more room */
+  background: linear-gradient(135deg, #f5f7fa 0%, #d9e2f3 100%); /* Soft and calming gradient background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Card styling for each job */
+.jobCard {
+  background: #ffffff; /* Clean white background for the card */
+  border-radius: 12px; /* Rounded corners for the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Deeper shadow for a floating effect */
+  padding: 25px; /* Increased padding for more content space */
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease; /* Smooth transitions */
+  border: 1px solid #e0e0e0; /* Light border for definition */
+}
+
+.jobCard:hover {
+  transform: translateY(-8px); /* More pronounced lift on hover */
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  background: #f9f9f9; /* Subtle background change on hover */
+}
+
+/* Styling for job title */
+.jobTitle {
+  font-size: 1.8rem; /* Larger font size for greater emphasis */
+  margin-bottom: 15px;
+  color: #2c3e50; /* Darker text color for visibility */
+  font-family: 'Poppins', sans-serif; /* Modern font for style */
+  font-weight: 700; /* Bold text for prominence */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow for depth */
+}
+
+/* Styling for job description */
+.jobDescription {
+  font-size: 1.15rem; /* Slightly larger font size */
+  color: #666; /* Soft gray text color */
+  margin-bottom: 15px;
+  line-height: 1.8; /* Improved readability with line height */
+  font-family: 'Open Sans', sans-serif; /* Readable font */
+}
+
+/* Styling for job budget */
+.jobBudget {
+  font-size: 1.4rem; /* Larger font size for emphasis */
+  font-weight: 700; /* Bolder text for prominence */
+  color: #007bff; /* Primary color for budget */
+  margin-bottom: 15px;
+  border-bottom: 3px solid #007bff; /* Bold underline effect */
+  padding-bottom: 8px; /* Space between text and underline */
+}
+
+/* Styling for the bid button */
+.bidButton {
+  background-color: #28a745; /* Vibrant green background */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 25px; /* Fully rounded corners */
+  padding: 12px 20px; /* Generous padding for the button */
+  cursor: pointer;
+  font-size: 1.15rem; /* Slightly larger font size */
+  font-weight: 600; /* Bold text */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  position: relative; /* Positioning for pseudo-elements */
+  overflow: hidden; /* Hide overflow for animation */
+  text-transform: uppercase; /* Uppercase text for emphasis */
+}
+
+.bidButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.3); /* Light overlay */
+  transition: all 0.6s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+}
+
+.bidButton:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+}
+
+.bidButton:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: translateY(-6px); /* Slight lift on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  color: #ffffff; /* Ensure text color remains white */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle text shadow on hover */
+}

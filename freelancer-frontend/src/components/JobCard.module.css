@@ -1,88 +1,134 @@
 /* Styling for the job card container */
 .jobCard {
-    background-color: #ffffff; /* White background */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px;
-    margin: 10px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
-  }
-  
-  /* Hover effect for job card */
-  .jobCard:hover {
-    transform: translateY(-5px); /* Slight lift effect */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
-  }
-  
-  /* Styling for job title */
-  .jobTitle {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333; /* Darker text color */
-  }
-  
-  /* Styling for job description */
-  .description {
-    font-size: 1rem;
-    color: #555; /* Slightly lighter text color */
-    margin-bottom: 10px;
-  }
-  
-  /* Styling for job budget */
-  .budget {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #007bff; /* Primary color */
-    margin-bottom: 10px;
-  }
-  
-  /* Styling for job deadline */
-  .deadline {
-    font-size: 0.9rem;
-    color: #888; /* Lighter text color */
-    margin-bottom: 15px;
-  }
-  
-  /* Styling for buttons */
-  .bidButton {
-    background-color: #28a745; /* Green for bidding */
-    color: #ffffff; /* White text */
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease; /* Smooth color transition */
-  }
-  
-  .bidButton:hover {
-    background-color: #218838; /* Darker green on hover */
-  }
-  
-  /* Styling for view application button */
-  .viewButton {
-    background-color: #007bff; /* Primary color */
-    color: #ffffff; /* White text */
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease; /* Smooth color transition */
-  }
-  
-  .viewButton:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-  }
-  
-  /* Styling for disabled button */
-  .disabledButton {
-    background-color: #cccccc; /* Light grey for disabled state */
-    color: #666666; /* Darker grey text */
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: not-allowed; /* Cursor indicating button is not clickable */
-    font-size: 1rem;
-  }
-  
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); /* Subtle gradient background */
+  border-radius: 16px; /* Smooth, rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for a more pronounced depth effect */
+  padding: 30px; /* Increased padding for a more luxurious feel */
+  margin: 20px; /* Wider margin for better spacing */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Slower, smoother transition */
+  border: 2px solid transparent; /* Transparent border for a refined hover effect */
+  overflow: hidden; /* Ensure child elements are clipped */
+  position: relative; /* Enable positioning for child elements */
+}
+
+.jobCard::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.15) 10%, transparent 10.5%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  transform: rotate(45deg);
+}
+
+.jobCard:hover::before {
+  opacity: 1;
+}
+
+.jobCard:hover {
+  transform: translateY(-10px) scale(1.03); /* Larger lift and slight scaling */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  border-color: #007bff; /* Border color transition for emphasis */
+}
+
+/* Styling for job title */
+.jobTitle {
+  font-size: 2rem; /* Larger font size for emphasis */
+  margin-bottom: 15px; /* Increased margin for spacing */
+  color: #2c3e50; /* Darker text color */
+  font-family: 'Poppins', sans-serif; /* Modern, clean font */
+  font-weight: 600; /* Bolder font weight */
+  letter-spacing: 1px; /* Slight letter spacing for readability */
+  text-transform: uppercase; /* Uppercase for strong emphasis */
+}
+
+/* Styling for job description */
+.description {
+  font-size: 1.2rem; /* Larger font size for clarity */
+  color: #4a4a4a; /* Neutral grey for readability */
+  margin-bottom: 20px; /* Increased margin for spacing */
+  line-height: 1.8; /* Improved line height for readability */
+}
+
+/* Styling for job budget */
+.budget {
+  font-size: 1.4rem; /* Larger font size for emphasis */
+  font-weight: bold;
+  color: #28a745; /* Green color to emphasize the budget */
+  margin-bottom: 15px; /* Increased margin for spacing */
+  background: rgba(40, 167, 69, 0.1); /* Light green background for contrast */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Styling for job deadline */
+.deadline {
+  font-size: 1rem; /* Slightly increased font size */
+  color: #6c757d; /* Muted grey color for deadline */
+  margin-bottom: 20px; /* Increased margin for spacing */
+  background: rgba(108, 117, 125, 0.1); /* Light grey background for contrast */
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* Styling for buttons */
+.bidButton,
+.viewButton {
+  display: inline-block; /* Inline block for better spacing */
+  background-color: #007bff; /* Primary color */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 50px; /* Fully rounded corners for a modern look */
+  padding: 15px 25px; /* Increased padding for larger buttons */
+  cursor: pointer;
+  font-size: 1.2rem; /* Slightly larger font size */
+  font-weight: bold; /* Bolder text */
+  transition: background-color 0.4s ease, transform 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Light shadow for depth */
+  position: relative;
+  overflow: hidden;
+  margin-right: 10px; /* Space between buttons */
+  text-transform: uppercase; /* Uppercase text for emphasis */
+}
+
+.bidButton::before,
+.viewButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2); /* Light overlay */
+  transition: all 0.6s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+}
+
+.bidButton:hover::before,
+.viewButton:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+}
+
+.bidButton:hover,
+.viewButton:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-5px) scale(1.05); /* Slight lift and scale on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Styling for disabled button */
+.disabledButton {
+  background-color: #cccccc; /* Light grey for disabled state */
+  color: #666666; /* Darker grey text */
+  border: none;
+  border-radius: 50px; /* Fully rounded corners */
+  padding: 12px 20px;
+  cursor: not-allowed; /* Cursor indicating button is not clickable */
+  font-size: 1.1rem; /* Slightly larger font size */
+  font-weight: bold; /* Bolder text */
+  opacity: 0.6; /* Lower opacity for a more disabled appearance */
+}

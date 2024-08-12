@@ -1,25 +1,29 @@
 /* Login.module.css */
 .container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 30px;
-  border-radius: 12px;
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 8px 8px 15px #b3b3b3, -8px -8px 15px #ffffff;
-  transition: transform 0.3s ease;
+  max-width: 450px; /* Slightly wider for a more spacious layout */
+  margin: 60px auto; /* Centered with increased top margin */
+  padding: 40px; /* Generous padding for a comfortable layout */
+  border-radius: 20px; /* More rounded corners for a modern look */
+  background: linear-gradient(145deg, #ffffff, #f0f4f8); /* Light gradient background */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 -15px 30px rgba(255, 255, 255, 0.8); /* Enhanced shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .container:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px); /* More pronounced lift on hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 -20px 40px rgba(255, 255, 255, 0.9); /* Enhanced shadow on hover */
+  background: linear-gradient(145deg, #f0f4f8, #e0e5e8); /* Updated gradient on hover */
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 1px;
+  margin-bottom: 30px; /* Increased margin for better spacing */
+  color: #1e2a38; /* Dark blue color */
+  font-size: 28px; /* Larger font size for emphasis */
+  font-weight: 800; /* Bolder text */
+  letter-spacing: 1.5px; /* Increased letter spacing */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
 }
 
 form {
@@ -28,71 +32,104 @@ form {
 }
 
 label {
-  margin-bottom: 5px;
+  margin-bottom: 10px; /* Increased margin for better spacing */
   font-weight: 600;
-  color: #555;
+  color: #333; /* Darker color for better readability */
+  font-family: 'Roboto', sans-serif; /* Consistent font style */
+  font-size: 18px; /* Larger font size for labels */
 }
 
 input, select {
-  padding: 12px;
-  margin-bottom: 20px;
+  padding: 14px;
+  margin-bottom: 15px;
   border: none;
-  border-radius: 8px;
-  background: #f0f0f0;
-  box-shadow: inset 2px 2px 5px #b8b9be, inset -5px -5px 10px #ffffff;
-  font-size: 16px;
+  border-radius: 12px; /* More rounded corners */
+  background: #e9eff1; /* Light blue background */
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), inset -3px -3px 6px rgba(255, 255, 255, 0.8); /* Subtle inset shadow */
+  font-size: 17px;
   color: #333;
   outline: none;
   transition: all 0.3s ease;
 }
 
 input:focus, select:focus {
-  box-shadow: inset 2px 2px 5px #c1c1c1, inset -2px -2px 5px #ffffff;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.15), inset -3px -3px 6px rgba(255, 255, 255, 0.7);
+  border: 1px solid #00aaff; /* Bright blue border on focus */
+  background: #ffffff; /* White background on focus */
 }
 
 button {
-  padding: 12px;
-  background-color: #28a745;
-  color: #fff;
+  padding: 14px;
+  background-color: #ff5722; /* Vibrant orange background */
+  color: #ffffff;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px; /* Fully rounded corners */
   cursor: pointer;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 1.5px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 button:disabled {
-  background-color: #ddd;
+  background-color: #b3b3b3; /* Gray background for disabled state */
   cursor: not-allowed;
 }
 
 button:not(:disabled):hover {
-  background-color: #218838;
-  transform: translateY(-3px);
+  background-color: #e64a19; /* Darker orange on hover */
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.3); /* Light overlay effect */
+  transition: all 0.6s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+}
+
+button:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
 }
 
 p {
   text-align: center;
-  color: #555;
-  margin-top: 20px;
+  color: #555; /* Darker color for better readability */
+  margin-top: 25px; /* Increased margin for spacing */
+  font-family: 'Roboto', sans-serif; /* Consistent font style */
 }
 
 a {
-  color: #007bff;
+  color: #ff5722; /* Vibrant orange color for links */
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 a:hover {
+  color: #e64a19; /* Darker orange on hover */
   text-decoration: underline;
 }
 
 .error {
-  color: red;
+  color: #d32f2f; /* Strong red color for error messages */
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* Increased margin for spacing */
   font-weight: bold;
+  font-size: 16px; /* Slightly larger font size */
+  font-family: 'Roboto', sans-serif; /* Consistent font style */
+  background-color: #fdecea; /* Light red background */
+  padding: 12px; /* Padding for error box */
+  border-radius: 10px; /* Rounded corners for the error box */
+  border: 1px solid #f8d7da; /* Light red border */
 }

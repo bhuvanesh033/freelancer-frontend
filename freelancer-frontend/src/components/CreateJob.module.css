@@ -1,76 +1,113 @@
-/* Container for the entire form */
+/* Container for the bid form */
 .container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    background-color: #f9f9f9; /* Light background */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-  
-  /* Title styling */
-  .title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333; /* Darker text color */
-  }
-  
-  /* Form styling */
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Form group for each input field */
-  .formGroup {
-    margin-bottom: 15px;
-  }
-  
-  /* Label styling */
-  .label {
-    font-size: 1rem;
-    color: #555; /* Slightly lighter text color */
-    margin-bottom: 5px;
-    display: block;
-  }
-  
-  /* Input field styling */
-  .input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1rem;
-    color: #333; /* Text color inside input */
-    background-color: #e9ecef; /* Light gray background for input fields */
-  }
-  
-  /* Textarea styling */
-  .textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1rem;
-    color: #333; /* Text color inside textarea */
-    background-color: #e9ecef; /* Light gray background for textarea */
-    min-height: 100px;
-    resize: vertical; /* Allow vertical resizing only */
-  }
-  
-  /* Submit button styling */
-  .submitButton {
-    background-color: #007bff; /* Primary color */
-    color: #ffffff; /* White text */
-    border: none;
-    border-radius: 5px;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease; /* Smooth color transition */
-  }
-  
-  .submitButton:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-  }
-  
+  max-width: 750px; /* Increased width for a more spacious form */
+  margin: auto;
+  padding: 40px; /* Ample padding for a comfortable layout */
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); /* Vibrant gradient for a lively look */
+  border-radius: 30px; /* Very rounded corners for a modern feel */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25); /* Deeper shadow for more depth */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease; /* Smooth transitions for a dynamic feel */
+}
+
+.container:hover {
+  transform: scale(1.1); /* Larger scale on hover for emphasis */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35); /* Stronger shadow on hover */
+  background: linear-gradient(135deg, #fad0c4 0%, #ff9a9e 100%); /* Reverse gradient on hover for an engaging effect */
+}
+
+/* Form heading styling */
+h1 {
+  font-size: 3rem; /* Even larger font size for the heading */
+  margin-bottom: 35px; /* More space below the heading */
+  color: #34495e; /* Deep gray-blue for a strong contrast */
+  text-align: center; /* Centered text for symmetry */
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25); /* Stronger text shadow for depth */
+  font-family: 'Montserrat', sans-serif; /* Modern and elegant font choice */
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 25px; /* Generous spacing between form elements */
+}
+
+/* Label styling */
+label {
+  display: block;
+  font-size: 1.3rem; /* Slightly larger font size */
+  margin-bottom: 12px; /* Increased space below the label */
+  color: #2c3e50; /* Darker, bold color for better visibility */
+  font-weight: 700; /* Bolder text for labels */
+}
+
+/* Input and textarea styling */
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 16px; /* Comfortable padding for better user experience */
+  border: 1px solid #bbb; /* Slightly darker border for definition */
+  border-radius: 15px; /* Very rounded corners for a soft look */
+  font-size: 1.3rem; /* Larger font size for clarity */
+  color: #2c3e50; /* Darker text color for better readability */
+  background-color: #ffffff; /* Crisp white background */
+  box-sizing: border-box;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease; /* Smooth transition for focus effects */
+}
+
+input[type="number"]:focus,
+textarea:focus {
+  border-color: #ff6b6b; /* Vibrant red border on focus */
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.4); /* Subtle glow on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Button styling */
+button {
+  background-color: #4CAF50; /* Vibrant green background */
+  color: white;
+  border: none;
+  border-radius: 50px; /* Fully rounded for a button-like appearance */
+  padding: 18px 24px; /* Ample padding for a large, clickable button */
+  cursor: pointer;
+  font-size: 1.4rem; /* Larger font size */
+  font-weight: 800; /* Bold, strong text */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Strong shadow for emphasis */
+  transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease; /* Added smooth transitions */
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%; /* Full-width button */
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350%;
+  height: 350%;
+  background: rgba(255, 255, 255, 0.5); /* Light overlay for a more noticeable effect */
+  transition: all 0.7s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+}
+
+button:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+}
+
+button:hover {
+  background-color: #388E3C; /* Darker green on hover */
+  transform: translateY(-8px); /* More pronounced lift on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+/* Error message styling */
+.error {
+  color: #e74c3c; /* Vibrant red for error messages */
+  font-size: 1.2rem; /* Larger font size for emphasis */
+  margin-top: 20px; /* More space above the error message */
+  text-align: center; /* Centered text for emphasis */
+  font-weight: bold; /* Strong, bold text */
+  font-family: 'Montserrat', sans-serif; /* Modern, stylish font */
+  text-transform: uppercase; /* Uppercase text for stronger emphasis */
+}

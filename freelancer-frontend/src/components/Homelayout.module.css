@@ -1,24 +1,38 @@
 /* Container for the whole layout */
 .container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
-  }
-  
-  /* Styling for the main content area */
-  .mainContent {
-    flex: 1; /* Take up remaining space after header */
-    padding: 20px;
-    background-color: #f4f4f9; /* Light background color for content */
-  }
-  
-  /* Ensure that the header is styled separately */
-  .header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: #ffffff; /* White background for header */
-    border-bottom: 1px solid #e1e1e1; /* Light border for separation */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for header */
-  }
-      
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Styling for the main content area */
+.mainContent {
+  flex: 1; /* Take up remaining space after header */
+  padding: 20px;
+  background-color: #f4f4f9; /* Light background color for content */
+  background-image: url('https://img.freepik.com/free-photo/mouse-laptop-cactus-plant-eyeglasses-budget-plan-coffee-cup-blue-background_23-2148178560.jpg?size=626&ext=jpg'); /* Background image */
+  background-size: cover; /* Cover entire area with the image */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  color: #333; /* Ensure text remains readable */
+}
+
+/* Ensure that the header is styled separately */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff; /* White background for header */
+  border-bottom: 1px solid #e1e1e1; /* Light border for separation */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for header */
+  z-index: 10; /* Ensure the header stays above content */
+}
+
+/* Additional styling to ensure text readability over the background image */
+.mainContent h1, .mainContent p {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for text */
+  padding: 10px;
+  border-radius: 10px; /* Rounded corners for text containers */
+  display: inline-block;
+  margin-bottom: 20px;
+}

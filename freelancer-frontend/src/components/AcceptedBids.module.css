@@ -1,69 +1,113 @@
-/* Container for the applied jobs section */
+/* Container for the bid form */
 .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background: #f9f9f9; /* Light background */
-    border-radius: 10px; /* Slightly rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for container */
-  }
-  
-  /* Heading styling */
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333; /* Darker text color */
-    text-align: center; /* Centered text */
-  }
-  
-  /* Individual job card styling */
-  .job-card {
-    background: #ffffff; /* White background for job cards */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 8px; /* Rounded corners for job cards */
-    padding: 20px;
-    margin-bottom: 20px; /* Space between job cards */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for job card */
-    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
-  }
-  
-  /* Job card hover effect */
-  .job-card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
-  }
-  
-  /* Job title styling */
-  .job-card h3 {
-    font-size: 1.5rem;
-    color: #007bff; /* Blue color for the title */
-    margin-bottom: 15px;
-  }
-  
-  /* Other text styling */
-  .job-card p {
-    margin: 8px 0;
-    color: #555; /* Medium gray text color */
-  }
-  
-  /* Button styling */
-  button {
-    background-color: #007bff; /* Blue background */
-    color: white;
-    border: none;
-    border-radius: 5px; /* Rounded button corners */
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease; /* Smooth color transition */
-  }
-  
-  button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
-  /* Loading and error messages */
-  p {
-    font-size: 1.1rem;
-    color: #666; /* Gray color for text */
-  }
-  
+  max-width: 700px; /* Slightly increased width for more space */
+  margin: auto;
+  padding: 35px; /* Increased padding for better spacing */
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); /* Gradient background for a more vibrant look */
+  border-radius: 25px; /* More pronounced rounded corners */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow for more depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Added background transition */
+}
+
+.container:hover {
+  transform: scale(1.07); /* Slightly larger scale on hover */
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+  background: linear-gradient(135deg, #8ec5fc 0%, #e0c3fc 100%); /* Reverse gradient on hover for a dynamic effect */
+}
+
+/* Form heading styling */
+h1 {
+  font-size: 2.7rem; /* Larger font size for the heading */
+  margin-bottom: 30px;
+  color: #2c3e50; /* Darker color for the heading */
+  text-align: center; /* Centered text */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Stronger text shadow */
+  font-family: 'Poppins', sans-serif; /* Stylish font for a modern look */
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 22px; /* Increased space between form groups */
+}
+
+/* Label styling */
+label {
+  display: block;
+  font-size: 1.2rem; /* Slightly larger font size */
+  margin-bottom: 10px; /* Increased space below label */
+  color: #34495e; /* Darker gray-blue text for labels */
+  font-weight: 600; /* Bolder text for better visibility */
+}
+
+/* Input and textarea styling */
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 14px; /* Increased padding for better spacing */
+  border: 1px solid #ddd;
+  border-radius: 12px; /* More pronounced rounded corners */
+  font-size: 1.2rem; /* Slightly larger font size */
+  color: #2c3e50; /* Darker text color */
+  background-color: #ffffff; /* White background */
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for border and shadow */
+}
+
+input[type="number"]:focus,
+textarea:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.3); /* Subtle glow on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Button styling */
+button {
+  background-color: #ff6b6b; /* Vibrant red background */
+  color: white;
+  border: none;
+  border-radius: 50px; /* Fully rounded corners */
+  padding: 16px 22px; /* Increased padding for a larger button */
+  cursor: pointer;
+  font-size: 1.3rem; /* Larger font size */
+  font-weight: 700; /* Bolder text */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger button shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+  position: relative; /* Position relative for pseudo-elements */
+  overflow: hidden; /* Hide overflow for animation */
+  display: block;
+  width: 100%; /* Full width button */
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.4); /* Light overlay */
+  transition: all 0.6s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+}
+
+button:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+}
+
+button:hover {
+  background-color: #e63946; /* Darker red on hover */
+  transform: translateY(-6px); /* Slight lift on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
+}
+
+/* Error message styling */
+.error {
+  color: #e63946; /* Red for error messages */
+  font-size: 1.1rem; /* Slightly larger font size */
+  margin-top: 18px; /* Increased space above the error message */
+  text-align: center; /* Centered error message */
+  font-weight: bold; /* Bolder text for emphasis */
+  font-family: 'Poppins', sans-serif; /* Added a stylish font */
+  text-transform: uppercase; /* Uppercase for emphasis */
+}
