@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import styles from './Conversations.module.css'; // Assuming you're using CSS Modules
 
 const Conversations = () => {
   const user = useSelector(state => state.auth.user);
   const [conversations, setConversations] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate(); // Hook for navigation
 
   useEffect(() => {
     const fetchData = async () => {
       if (user?.id) {
         try {
+          console.log('Fetching conversations for user ID:', user.id); // Log user ID
           const response = await axios.get(`http://localhost:5000/api/conversations/${user.id}`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -24,6 +27,8 @@ const Conversations = () => {
         } finally {
           setLoading(false);
         }
+      } else {
+        console.log('No user ID found'); // Log if user ID is missing
       }
     };
 
@@ -31,9 +36,12 @@ const Conversations = () => {
   }, [user]);
 
   const handleMessageClick = (conversationId) => {
-    // Handle message button click
-    console.log('Message button clicked for conversation:', conversationId);
-    // Redirect or open message dialog
+    console.log('Clicked conversation ID:', conversationId); // Log conversation ID on click
+    if (conversationId) {
+      navigate(`/chat/${conversationId}`); // Redirect to chat page
+    } else {
+      console.error('No conversation ID provided');
+    }
   };
 
   if (loading) {
@@ -53,9 +61,9 @@ const Conversations = () => {
           <div key={convo._id} className={styles.card}>
             <h3>{convo.jobTitle}</h3>
             <p>
-              Participants: 
+              Participants:
               {convo.participants.map(participant => (
-                <span key={participant._id} className={styles.participant}>
+                <span key={participant.id} className={styles.participant}>
                   {participant.name}
                 </span>
               ))}

@@ -17,6 +17,7 @@ import BidsList from './components/BidsList';
 import AcceptedBids from './components/AcceptedBids';  
 import Messages from './components/Messages';
 import Conversations from './components/Conversations';
+import ChatPage from './components/ChatPage';
 import './index.css'; // or wherever Tailwind CSS is imported
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/messages" element={<Messages />} />
             <Route path="/conversations" element={<Conversations />} />
             <Route path="/post-job" element={<PostJob />} />
+            <Route path="/chat/:conversationId" element={<ChatPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
