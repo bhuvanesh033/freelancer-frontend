@@ -20,7 +20,7 @@ const Login = () => {
     setError('');
   
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('https://free-lancer-1.onrender.com/api/auth/login', {
         email,
         password,
       });

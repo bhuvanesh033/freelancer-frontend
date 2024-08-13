@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './CreateJob.module.css'; // Import CSS Module
-
+import { useNavigate, Link } from 'react-router-dom';
 const CreateJob = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [budget, setBudget] = useState('');
   const [deadline, setDeadline] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,6 +39,7 @@ const CreateJob = () => {
       );
   
       console.log('Job created successfully', response.data);
+      navigate('/my-jobs'); 
       // Handle successful job creation, e.g., navigate to another page or show a success message
     } catch (error) {
       console.error('Error creating job:', error.response?.data?.msg || error.message);

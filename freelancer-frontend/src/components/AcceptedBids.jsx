@@ -14,7 +14,7 @@ const AcceptedBids = () => {
   useEffect(() => {
     const fetchAcceptedBids = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/acceptedBids/client');
+        const res = await axios.get('https://free-lancer-1.onrender.com/api/acceptedBids/client');
         setAcceptedBids(res.data);
       } catch (err) {
         setError('Failed to fetch accepted bids');
@@ -43,7 +43,7 @@ const AcceptedBids = () => {
 
   const handleSubmitReview = async (jobId, freelancerId) => {
     try {
-      await axios.post(`http://localhost:5000/api/reviews/${jobId}`, {
+      await axios.post(`https://free-lancer-1.onrender.com/api/reviews/${jobId}`, {
         ...review,
         freelancerId,
       });
@@ -56,7 +56,7 @@ const AcceptedBids = () => {
 
   const handleSubmitPayment = async (jobId, freelancerId) => {
     try {
-      await axios.post(`http://localhost:5000/api/payments/${jobId}`, {
+      await axios.post(`https://free-lancer-1.onrender.com/api/payments/${jobId}`, {
         amount: payment.amount,
         freelancerId,
       });
@@ -69,7 +69,7 @@ const AcceptedBids = () => {
 
   const checkPaymentStatus = async (jobId) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/payments/${jobId}`);
+      const res = await axios.get(`https://free-lancer-1.onrender.com/api/payments/${jobId}`);
       setPaymentStatus(res.data);
     } catch (err) {
       console.error(err);

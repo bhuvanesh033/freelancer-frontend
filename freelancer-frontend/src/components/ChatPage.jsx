@@ -23,7 +23,7 @@ const ChatPage = () => {
 
     const fetchMessages = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/chat-messages/${conversationId}`, {
+        const response = await axios.get(`https://free-lancer-1.onrender.com/api/chat-messages/${conversationId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
@@ -42,7 +42,7 @@ const ChatPage = () => {
   const handleSendMessage = async () => {
     if (user?.id) { // Ensure user ID is available
       try {
-        await axios.post('http://localhost:5000/api/chat-message', {
+        await axios.post('https://free-lancer-1.onrender.com/api/chat-message', {
           conversationId,
           senderId: user.id, // Use user ID from Redux store
           text: newMessage

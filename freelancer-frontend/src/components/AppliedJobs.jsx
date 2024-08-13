@@ -14,18 +14,21 @@ const AppliedJobs = () => {
   useEffect(() => {
     const fetchBids = async () => {
       try {
-        const response = await axios.get('https://free-lancer-1.onrender.com/api/bids/user', {
+        const response = await axios.get('https://free-lancer-1.onrender.com/api/applied/user', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
         });
+        console.log('Response:', response); // Log the full response
         setBids(response.data.bids);
       } catch (error) {
+        console.error('Error fetching bids:', error.response ? error.response.data : error.message);
         setError('Failed to fetch bids');
       } finally {
         setLoading(false);
       }
     };
+    
 
     fetchBids();
   }, [token]);

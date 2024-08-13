@@ -10,7 +10,7 @@ const Messages = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/messages/freelancer');
+        const res = await axios.get('https://free-lancer-1.onrender.com/api/messages/freelancer');
         setMessages(res.data);
       } catch (err) {
         setError('Failed to fetch messages');

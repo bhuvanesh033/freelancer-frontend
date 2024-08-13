@@ -14,8 +14,8 @@ const BidsList = () => {
     const fetchBidsAndJob = async () => {
       try {
         const [bidsRes, jobRes] = await Promise.all([
-          axios.get(`http://localhost:5000/api/bids/${jobId}`),
-          axios.get(`http://localhost:5000/api/jobs/${jobId}`) // Fetch job details
+          axios.get(`https://free-lancer-1.onrender.com/api/bids/${jobId}`),
+          axios.get(`https://free-lancer-1.onrender.com/api/jobs/${jobId}`) // Fetch job details
         ]);
         setBids(bidsRes.data);
         setJob(jobRes.data);
@@ -32,17 +32,17 @@ const BidsList = () => {
   const acceptBid = async (bid) => {
     try {
       // Fetch job details to get client ID and job description
-      const jobRes = await axios.get(`http://localhost:5000/api/jobs/${jobId}`);
+      const jobRes = await axios.get(`https://free-lancer-1.onrender.com/api/jobs/${jobId}`);
       const job = jobRes.data;
 
       // Sending the message to the freelancer
-      await axios.post(`http://localhost:5000/api/messages/${jobId}`, {
+      await axios.post(`https://free-lancer-1.onrender.com/api/messages/${jobId}`, {
         message: 'I accept your bid',
         receiverId: bid.freelancerId._id
       });
 
       // Storing the accepted bid data in MongoDB
-      await axios.post(`http://localhost:5000/api/acceptedBids`, {
+      await axios.post(`https://free-lancer-1.onrender.com/api/acceptedBids`, {
         jobId: jobId,
         freelancerId: bid.freelancerId._id,
         clientId: job.clientId._id, // Use the client ID from the job details
@@ -52,7 +52,7 @@ const BidsList = () => {
       });
 
       // Create or retrieve a conversation
-      await axios.post('http://localhost:5000/api/conversation', {
+      await axios.post('https://free-lancer-1.onrender.com/api/conversation', {
         jobId: jobId,
         freelancerId: bid.freelancerId._id,
         clientId: job.clientId._id

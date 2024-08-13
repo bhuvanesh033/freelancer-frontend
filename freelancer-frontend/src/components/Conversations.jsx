@@ -15,7 +15,7 @@ const Conversations = () => {
       if (user?.id) {
         try {
           console.log('Fetching conversations for user ID:', user.id); // Log user ID
-          const response = await axios.get(`http://localhost:5000/api/conversations/${user.id}`, {
+          const response = await axios.get(`https://free-lancer-1.onrender.com/api/conversations/${user.id}`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}`
             }
