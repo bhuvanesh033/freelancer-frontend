@@ -8,7 +8,7 @@
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(8, 246, 63, 0.1); /* Subtle shadow */
   padding: 30px; /* Slightly increased padding */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
 }
@@ -20,7 +20,7 @@
 
 /* Job Card Styles */
 .job-card {
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  background: rgba(8, 248, 48, 0.8); /* Semi-transparent background */
   border-radius: 8px; /* Rounded corners for job cards */
   padding: 20px; /* More padding inside job cards */
   margin-bottom: 20px; /* Space between job cards */

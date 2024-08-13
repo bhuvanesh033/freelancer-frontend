@@ -1,47 +1,219 @@
+/* Chat container styling */
 .chatContainer {
     display: flex;
     flex-direction: column;
     height: 100%;
+    max-height: 100vh;
     padding: 20px;
-    border: 1px solid #ddd;
+    background: linear-gradient(135deg, #a0c4f7 0%, #f9a1bc 100%);
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    animation: fadeInContainer 1s ease-out;
+    position: relative;
   }
   
+  /* Fade-in effect for chat container */
+  @keyframes fadeInContainer {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Messages container styling */
   .messagesContainer {
     flex: 1;
     overflow-y: auto;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    position: relative;
+    animation: slideInMessages 0.5s ease;
   }
   
+  /* Slide-in effect for messages container */
+  @keyframes slideInMessages {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Individual message styling */
   .message {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f1f1f1;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    line-height: 1.6;
+    word-break: break-word;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    animation: messageIn 0.5s ease;
   }
   
+  /* Animation for messages */
+  @keyframes messageIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .message:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Message card title styling */
+  .message .sender {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Message card text styling */
+  .message .text {
+    margin: 5px 0;
+    color: #555;
+    font-size: 1rem;
+  }
+  
+  /* Timestamp styling */
+  .message .timestamp {
+    display: block;
+    font-size: 0.875rem;
+    color: #888;
+    margin-top: 5px;
+    text-align: right;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .message:hover .timestamp {
+    opacity: 1;
+  }
+  
+  /* Message form styling */
   .messageForm {
     display: flex;
-    margin-top: auto;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    animation: fadeInForm 0.5s ease;
   }
   
+  /* Fade-in effect for form */
+  @keyframes fadeInForm {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Input styling in message form */
   .messageForm input {
     flex: 1;
-    padding: 10px;
+    padding: 14px 16px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   }
   
+  .messageForm input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    animation: inputFocus 0.3s ease;
+  }
+  
+  /* Pulsing effect on input focus */
+  @keyframes inputFocus {
+    0% {
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 16px rgba(0, 123, 255, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    }
+  }
+  
+  /* Button styling in message form */
   .messageForm button {
-    padding: 10px;
+    padding: 12px 20px;
     border: none;
     background-color: #007bff;
-    color: white;
-    border-radius: 5px;
+    color: #ffffff;
+    border-radius: 25px;
     cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
   }
   
+  /* Button hover effects */
   .messageForm button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Button ripple effect */
+  .messageForm button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+  }
+  
+  .messageForm button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  /* Placeholder styling */
+  .messageForm input::placeholder {
+    color: #aaa;
+    opacity: 1;
   }
   

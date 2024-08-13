@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 25px; /* Increased gap for better spacing between cards */
   padding: 25px; /* Increased padding for more room */
-  background: linear-gradient(135deg, #f5f7fa 0%, #d9e2f3 100%); /* Soft and calming gradient background */
+  background: linear-gradient(135deg, #0cdbf2 0%, #62f04f 100%); /* Soft and calming gradient background */
   border-radius: 15px; /* Rounded corners */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }

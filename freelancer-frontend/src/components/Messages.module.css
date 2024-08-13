@@ -1,72 +1,74 @@
 /* Container for the message form */
 .container {
-  max-width: 750px; /* Increased width for a spacious layout */
+  max-width: 800px; /* Wider width for a more spacious layout */
   margin: auto;
-  padding: 30px; /* Ample padding for a spacious feel */
-  background: linear-gradient(135deg, #f9a1bc 0%, #a0c4f7 100%); /* Gradient background with pink and blue hues */
-  border-radius: 15px; /* Rounded corners for a softer look */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+  padding: 40px; /* More padding for a generous feel */
+  background: linear-gradient(135deg, #f9a1bc 0%, #a0c4f7 100%); /* Soft gradient background */
+  border-radius: 20px; /* More rounded corners for a smoother look */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Deeper shadow for better depth */
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth transitions */
 }
 
 .container:hover {
-  transform: scale(1.03); /* Slight zoom effect on hover */
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+  transform: scale(1.03); /* Subtle zoom effect on hover */
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
   background: linear-gradient(135deg, #a0c4f7 0%, #f9a1bc 100%); /* Reversed gradient on hover */
 }
 
 /* Heading styling */
 h2 {
-  font-size: 2.25rem; /* Larger font size for headings */
-  color: #333; /* Dark text color */
-  margin-bottom: 25px;
+  font-size: 2.5rem; /* Larger font size for emphasis */
+  color: #333; /* Dark text color for contrast */
+  margin-bottom: 30px; /* Increased margin for spacing */
   text-align: center; /* Center-aligned text */
-  font-family: 'Poppins', sans-serif; /* Modern font */
-  font-weight: 600; /* Bold text for emphasis */
+  font-family: 'Poppins', sans-serif; /* Modern, clean font */
+  font-weight: 700; /* Bolder text for strong emphasis */
 }
 
 /* Styling for each message card */
 .message-card {
-  background: #ffffff; /* White background for cards */
-  border: 1px solid #ddd; /* Light border for separation */
-  border-radius: 12px; /* Rounded corners */
-  padding: 20px; /* Generous padding */
-  margin-bottom: 25px; /* Space between cards */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+  background: #ffffff; /* Clean white background */
+  border: 1px solid #ddd; /* Light border for subtle separation */
+  border-radius: 15px; /* More rounded corners */
+  padding: 25px; /* Generous padding */
+  margin-bottom: 30px; /* Space between cards */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
   transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
 }
 
 .message-card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  transform: translateY(-6px); /* Slight lift on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 /* Message card title styling */
 .message-card h3 {
-  margin: 0 0 15px; /* Space below the title */
+  margin: 0 0 20px; /* Space below the title */
   color: #007bff; /* Blue color for sender names */
-  font-size: 1.2rem; /* Slightly larger font size */
-  font-weight: 600; /* Bold for emphasis */
+  font-size: 1.3rem; /* Larger font size for emphasis */
+  font-weight: 700; /* Bold font weight for strong emphasis */
 }
 
 /* Message card text styling */
 .message-card p {
-  margin: 10px 0; /* Space around message text */
+  margin: 12px 0; /* Space around message text */
   color: #555; /* Medium gray text */
-  font-size: 1rem; /* Standard font size */
+  font-size: 1.1rem; /* Slightly larger font size for readability */
+  line-height: 1.6; /* Improved line height for readability */
 }
 
 /* Date styling */
 .message-card .date {
-  font-size: 0.875rem; /* Slightly smaller font size for dates */
-  color: #888; /* Light gray color */
+  font-size: 0.9rem; /* Slightly larger font size for better readability */
+  color: #888; /* Light gray color for dates */
+  margin-top: 5px; /* Space above the date */
 }
 
 /* Error message styling */
 .error {
   color: #e74c3c; /* Bright red for errors */
-  font-size: 1.1rem; /* Slightly larger font size */
-  margin-top: 15px; /* Space above error message */
+  font-size: 1.2rem; /* Slightly larger font size for visibility */
+  margin-top: 20px; /* Space above error message */
   text-align: center; /* Center-aligned text */
-  font-weight: bold; /* Bold text for emphasis */
+  font-weight: 700; /* Bolder text for emphasis */
 }
